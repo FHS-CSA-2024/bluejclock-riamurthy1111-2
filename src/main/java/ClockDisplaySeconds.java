@@ -1,3 +1,4 @@
+package src.main.java;
 
 
 public class ClockDisplaySeconds
@@ -37,7 +38,10 @@ public class ClockDisplaySeconds
     //The hours should increase when the minutes roll over
     //The updateDisplay method should be called before finishing
     public void timeTick(){
-        minutes.increment();
+        seconds.increment();
+        if(seconds.getValue() == 0){
+            minutes.increment();
+        }
         //Checking to see if value rolled over to 0
         if(minutes.getValue() == 0){
             hours.increment();
